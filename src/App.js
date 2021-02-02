@@ -10,9 +10,10 @@ import { AlbumList, AlbumEdit, AlbumCreate } from './albums';
 import { CommentList, CommentEdit, CommentCreate } from './comments'
 import jsonServerProvider from 'ra-data-json-server';
 import Dashboard from './Dashboard';
+import authProvider from "./authProvider";
 
 const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
-const App = () => (<Admin dashboard={Dashboard} dataProvider={dataProvider}>
+const App = () => (<Admin dashboard={Dashboard} authProvider={authProvider} dataProvider={dataProvider}>
     <Resource name="users" list={UserList} edit={UserEdit} create={UserCreate} icon={UserIcon} />
     <Resource name="photos" list={PhotoList} edit={PhotoEdit} create={PhotoCreate} icon={PhotoIcon} />
     <Resource name="albums" list={AlbumList} edit={AlbumEdit} create={AlbumCreate} icon={PhotoAlbumIcon} />
