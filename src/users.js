@@ -29,6 +29,9 @@ const UserFilter = (props) => (
     <Filter {...props}>
         <TextInput label="Search" source="q" alwaysOn />
         <TextInput label="Id" source="id" />
+        <TextInput label="Username" source="username" />
+        <TextInput label="Name" source="name" />
+        <TextInput label="Phone" source="phone" />
     </Filter>
 );
 
