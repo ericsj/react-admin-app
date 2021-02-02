@@ -20,10 +20,10 @@ export default () => (
                 <p>Below you can check more details about each menu tab:</p>
             <h3>Users</h3>
             <p>Users registered in this platform</p>
-            <h3>Albums</h3>
-            <p>Albums of photos uploaded by the users</p>
             <h3>Photos</h3>
-            <p>Photos posted by the users</p>
+            <p>Photos posted by users</p>
+            <h3>Albums</h3>
+            <p>Albums of photos uploaded by users</p>
             <h3>Comments</h3>
             <p>Comments posted on photos</p>
         </CardContent>
