@@ -31,9 +31,10 @@ const PhotoFilter = (props) => (
     <Filter {...props}>
         <TextInput label="Search" source="q" alwaysOn />
         <TextInput label="Id" source="id" />
-        <ReferenceInput label="Album" source="albumId" reference="albums" allowEmpty>
-            <SelectInput optionText="id" />
-        </ReferenceInput>
+        <TextInput label="Album Id" source="albumId" />
+        <TextInput label="Title" source="title" />
+        <TextInput label="Url" source="url" />
+        <TextInput label="Thumbnail Url" source="thumbnailUrl" />
     </Filter>
 );
 
