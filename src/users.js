@@ -28,6 +28,7 @@ export const UserList = props => (
 const UserFilter = (props) => (
     <Filter {...props}>
         <TextInput label="Search" source="q" alwaysOn />
+        <TextInput label="Id" source="id" />
     </Filter>
 );
 

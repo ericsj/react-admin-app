@@ -29,6 +29,7 @@ export const CommentList = props => (
 const CommentFilter = (props) => (
     <Filter {...props}>
         <TextInput label="Search" source="q" alwaysOn />
+        <TextInput label="Id" source="id" />
         <TextInput label="Photo Id" source="postId" />
         <TextInput label="Name" source="name" />
         <TextInput label="Email" source="email"  />

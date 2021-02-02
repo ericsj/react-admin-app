@@ -27,6 +27,7 @@ export const AlbumList = props => (
 const AlbumFilter = (props) => (
     <Filter {...props}>
         <TextInput label="Search" source="q" alwaysOn />
+        <TextInput label="Album Id" source="id" />
         <ReferenceInput label="User Id" source="userId" reference="users" allowEmpty>
             <SelectInput optionText="id" />
         </ReferenceInput>
