@@ -31,6 +31,7 @@ const AlbumFilter = (props) => (
         <ReferenceInput label="User Id" source="userId" reference="users" allowEmpty>
             <SelectInput optionText="id" />
         </ReferenceInput>
+        <TextInput label="Album Title" source="title" />
     </Filter>
 );
 
