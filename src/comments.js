@@ -9,7 +9,8 @@ import {
     SimpleForm,
     Create,
     EditButton,
-    NumberInput
+    ReferenceInput,
+    SelectInput
 } from 'react-admin';
 
 export const CommentList = props => (
@@ -28,6 +29,10 @@ export const CommentList = props => (
 const CommentFilter = (props) => (
     <Filter {...props}>
         <TextInput label="Search" source="q" alwaysOn />
+        <TextInput label="Photo Id" source="postId" />
+        <TextInput label="Name" source="name" />
+        <TextInput label="Email" source="email"  />
+        <TextInput multiline label="Body" source="body" />
     </Filter>
 );
 
