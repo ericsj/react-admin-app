@@ -8,7 +8,9 @@ import {
     Edit,
     SimpleForm,
     Create,
-    EditButton
+    EditButton,
+    ReferenceInput,
+    SelectInput
 } from 'react-admin';
 
 export const AlbumList = props => (
@@ -25,6 +27,9 @@ export const AlbumList = props => (
 const AlbumFilter = (props) => (
     <Filter {...props}>
         <TextInput label="Search" source="q" alwaysOn />
+        <ReferenceInput label="User Id" source="userId" reference="users" allowEmpty>
+            <SelectInput optionText="id" />
+        </ReferenceInput>
     </Filter>
 );
 
@@ -32,7 +37,6 @@ export const AlbumEdit = props => (
     <Edit title={<AlbumTitle />} {...props}>
         <SimpleForm>
             <TextInput disabled source="id" />
-            <TextInput source="userId" />
             <TextInput source="title" />
         </SimpleForm>
     </Edit>
@@ -42,12 +46,11 @@ export const AlbumCreate = props => (
     <Create {...props}>
         <SimpleForm>
             <TextInput source="userId" />
-            <TextInput source="id" />
             <TextInput source="title" />
         </SimpleForm>
     </Create>
 );
 
 const AlbumTitle = ({ record }) => {
-        return <span>User {record ? `"${record.title}"` : ''}</span>;
+        return <span>Album {record ? `"${record.title}"` : ''}</span>;
 };
