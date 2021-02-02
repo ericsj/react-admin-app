@@ -35,7 +35,7 @@ export const CommentEdit = props => (
     <Edit title={<CommentTitle />} {...props}>
         <SimpleForm>
             <TextInput disabled source="id" />
-             <NumberInput source='postId' min='0' label='Photo ID'/>      
+             <TextInput source='postId' label='Photo ID'/>      
             <TextInput source="name" />
             <TextInput source="email" />
             <TextInput multiline source="body" label='Comment'/>
@@ -46,7 +46,7 @@ export const CommentEdit = props => (
 export const CommentCreate = props => (
     <Create {...props}>
         <SimpleForm>
-            <NumberInput source='PhotoId' min='0' label='Photo Id'/>
+            <TextInput source='PhotoId' label='Photo Id'/>
             <TextInput source="name" />
             <TextInput source="email" />
             <TextInput multiline source="body" label='Comment'/>
