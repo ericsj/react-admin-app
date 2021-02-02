@@ -3,7 +3,6 @@ import {
     List,
     Datagrid,
     TextField,
-    EmailField, 
     Filter,
     TextInput,
     Edit,
@@ -11,7 +10,6 @@ import {
     Create,
     EditButton,
     ImageField,
-    ImageInput
 } from 'react-admin';
 
 export const PhotoList = props => (
