@@ -10,6 +10,8 @@ import {
     Create,
     EditButton,
     ImageField,
+    ReferenceInput,
+    SelectInput
 } from 'react-admin';
 
 export const PhotoList = props => (
@@ -28,6 +30,9 @@ export const PhotoList = props => (
 const PhotoFilter = (props) => (
     <Filter {...props}>
         <TextInput label="Search" source="q" alwaysOn />
+        <ReferenceInput label="Album" source="albumId" reference="albums" allowEmpty>
+            <SelectInput optionText="id" />
+        </ReferenceInput>
     </Filter>
 );
 
@@ -35,9 +40,9 @@ export const PhotoEdit = props => (
     <Edit title={<PhotoTitle />} {...props}>
         <SimpleForm>
         <TextInput disabled source="id" />
-        <TextInput source="albumId" />
+        <TextInput source="albumId" label="Album Id"/>
         <TextInput source="title" />
-        <TextInput source="url"/>
+        <TextInput source="url" label="Image Url" />
         <TextInput source="thumbnailUrl" />
         </SimpleForm>
     </Edit>
@@ -46,9 +51,9 @@ export const PhotoEdit = props => (
 export const PhotoCreate = props => (
     <Create {...props}>
         <SimpleForm>
-        <TextInput source="albumId" />
+        <TextInput source="albumId" label="Album Id" />
         <TextInput source="title" />
-        <TextInput source="url"/>
+        <TextInput source="url" label="Image Url" />
         <TextInput source="thumbnailUrl" />
         </SimpleForm>
     </Create>
