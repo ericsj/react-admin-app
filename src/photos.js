@@ -11,8 +11,6 @@ import {
     Create,
     EditButton,
     ImageField,
-    ReferenceInput,
-    SelectInput
 } from 'react-admin';
 import { useMediaQuery } from '@material-ui/core';
 

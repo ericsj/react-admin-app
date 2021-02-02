@@ -10,8 +10,6 @@ import {
     SimpleForm,
     Create,
     EditButton,
-    ReferenceInput,
-    SelectInput
 } from 'react-admin';
 import { useMediaQuery } from '@material-ui/core';
 
