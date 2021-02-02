@@ -1,6 +1,7 @@
 import * as React from "react";
 import {
     List,
+    SimpleList,
     Datagrid,
     TextField,
     EmailField, 
@@ -11,9 +12,20 @@ import {
     Create,
     EditButton
 } from 'react-admin';
+import { useMediaQuery } from '@material-ui/core';
 
-export const UserList = props => (
+
+export const UserList = props => {
+    const isSmall = useMediaQuery(theme => theme.breakpoints.down('sm'));
+    return(
     <List filters={<UserFilter />} {...props}>
+        {isSmall ?(
+            <SimpleList
+            primaryText={record => record.id}
+            secondaryText={record => `${record.name}`}
+            tertiaryText={record => record.username}
+            />
+        ):(
         <Datagrid rowClick="edit">
             <TextField source="id" />
             <TextField source="username" />
@@ -22,8 +34,10 @@ export const UserList = props => (
             <TextField source="phone" />
             <EditButton/>
         </Datagrid>
+        )}
     </List>
 );
+}
 
 const UserFilter = (props) => (
     <Filter {...props}>

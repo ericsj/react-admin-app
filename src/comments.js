@@ -1,6 +1,7 @@
 import * as React from "react";
 import {
     List,
+    SimpleList,
     Datagrid,
     TextField,
     Filter,
@@ -12,9 +13,19 @@ import {
     ReferenceInput,
     SelectInput
 } from 'react-admin';
+import { useMediaQuery } from '@material-ui/core';
 
-export const CommentList = props => (
+
+export const CommentList = props => {
+    const isSmall = useMediaQuery(theme => theme.breakpoints.down('sm'));
+    return(
     <List filters={<CommentFilter />} {...props}>
+        { isSmall ? (
+            <SimpleList
+            primaryText={record => `${record.name}`}
+            secondaryText={record => `${record.body}`}
+            tertiaryText={record => `Id: ${record.id}`}            />
+        ) : (
         <Datagrid rowClick="edit">
             <TextField source="id" />
             <TextField source="postId" />
@@ -23,9 +34,10 @@ export const CommentList = props => (
             <TextField source="body"/>
             <EditButton/>
         </Datagrid>
+        )}
     </List>
 );
-
+}
 const CommentFilter = (props) => (
     <Filter {...props}>
         <TextInput label="Search" source="q" alwaysOn />
